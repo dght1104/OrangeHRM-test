@@ -1,4 +1,4 @@
-package com.icrm.allure;
+package com.OrangeHRM.allure;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.model.Status;

@@ -1,4 +1,4 @@
-package com.icrm.enums;
+package com.OrangeHRM.enums;
 
 public enum TestAccount {
 

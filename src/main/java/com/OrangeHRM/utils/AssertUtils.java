@@ -1,4 +1,4 @@
-package com.icrm.utils;
+package com.OrangeHRM.utils;
 
 import org.testng.Assert;
 

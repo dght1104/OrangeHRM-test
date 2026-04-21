@@ -1,6 +1,6 @@
-package com.icrm.managers;
+package com.OrangeHRM.managers;
 
-import com.icrm.constants.AppConfig;
+import com.OrangeHRM.constants.AppConfig;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;

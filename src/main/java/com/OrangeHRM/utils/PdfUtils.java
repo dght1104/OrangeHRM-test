@@ -1,4 +1,4 @@
-package com.icrm.utils;
+package com.OrangeHRM.utils;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;

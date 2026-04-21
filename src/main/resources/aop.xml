@@ -1,5 +1,5 @@
 <aspectj>
     <aspects>
-        <aspect name="com.icrm.utils.AllureStepAspect"/>
+        <aspect name="com.OrangeHRM.utils.AllureStepAspect"/>
     </aspects>
 </aspectj>

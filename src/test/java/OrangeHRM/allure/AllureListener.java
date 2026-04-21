@@ -1,4 +1,4 @@
-package icrm.allure;
+package OrangeHRM.allure;
 
 import io.qameta.allure.listener.StepLifecycleListener;
 import io.qameta.allure.listener.TestLifecycleListener;
@@ -8,14 +8,14 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.icrm.allure.AllureLogger;
+import com.OrangeHRM.allure.AllureLogger;
 
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Objects;
 
-import static com.icrm.allure.AllureLogger.DEFAULT_LOG_LEVEL;
+import static com.OrangeHRM.allure.AllureLogger.DEFAULT_LOG_LEVEL;
 
 public class AllureListener implements StepLifecycleListener, TestLifecycleListener, ITestListener {
     private AllureLogger logger = new AllureLogger(AllureListener.class);

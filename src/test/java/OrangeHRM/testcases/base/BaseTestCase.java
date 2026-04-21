@@ -1,8 +1,8 @@
-package icrm.testcases.base;
+package OrangeHRM.testcases.base;
 
-import com.icrm.managers.BasePage;
-import com.icrm.managers.DriverFactory;
-import com.icrm.utils.ScreenshotUtils;
+import com.OrangeHRM.managers.BasePage;
+import com.OrangeHRM.managers.DriverFactory;
+import com.OrangeHRM.utils.ScreenshotUtils;
 import io.qameta.allure.Step;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -36,14 +36,4 @@ public class BaseTestCase {
     public void tearDown() {
         closeBrowser();
     }
-
-    // @BeforeClass
-    // public void setup() {
-    //     AuthService auth = new AuthService();
-
-    //     String code = AppConfig.CODE;
-
-    //     auth.initToken(code);
-    // }
-
 }

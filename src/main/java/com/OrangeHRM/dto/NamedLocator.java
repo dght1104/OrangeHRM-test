@@ -1,4 +1,4 @@
-package com.icrm.dto;
+package com.OrangeHRM.dto;
 
 import com.microsoft.playwright.Locator;
 

@@ -1,6 +1,6 @@
-package com.icrm.managers;
+package com.OrangeHRM.managers;
 
-import com.icrm.dto.NamedLocator;
+import com.OrangeHRM.dto.NamedLocator;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

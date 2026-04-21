@@ -1,4 +1,4 @@
-package com.icrm.managers;
+package com.OrangeHRM.managers;
 
 import com.microsoft.playwright.*;
 

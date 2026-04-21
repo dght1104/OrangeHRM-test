@@ -1,9 +1,9 @@
-package com.icrm.managers;
+package com.OrangeHRM.managers;
 
 import com.microsoft.playwright.*;
 import java.util.Arrays;
 import java.util.List;
-import com.icrm.constants.AppConfig;
+import com.OrangeHRM.constants.AppConfig;
 import com.microsoft.playwright.options.ViewportSize;
 
 public class BrowserFactory {

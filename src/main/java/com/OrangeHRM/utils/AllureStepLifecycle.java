@@ -1,4 +1,4 @@
-package com.icrm.utils;
+package com.OrangeHRM.utils;
 
 import io.qameta.allure.listener.StepLifecycleListener;
 import io.qameta.allure.model.Status;

@@ -1,4 +1,4 @@
-package com.icrm.utils;
+package com.OrangeHRM.utils;
 
 import com.microsoft.playwright.Locator;
 import java.util.ArrayList;
