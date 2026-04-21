@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Master Suite" verbose="1">
+
+    <suite-files>
+        <suite-file path="src/test/resources/suites/SP00001_iCRM_TS01_Authentication.xml"/>
+        <suite-file path="src/test/resources/suites/SP00001_iCRM_TS02_Contact.xml"/>
+    </suite-files>
+
+</suite>
