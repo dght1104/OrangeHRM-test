@@ -2,29 +2,39 @@ package com.OrangeHRM.utils;
 
 import com.microsoft.playwright.Page;
 import io.qameta.allure.Allure;
+
 import java.io.ByteArrayInputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScreenshotUtils {
 
-    String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
+    private static ThreadLocal<AtomicInteger> counter =
+            ThreadLocal.withInitial(AtomicInteger::new);
 
-    public void TakeScreenshot(Page page) {
+    private static ThreadLocal<String> testCaseIdHolder =
+            new ThreadLocal<>();
 
-        if (page == null) {
-            System.out.println("Page is null - cannot take screenshot");
-            return;
-        }
+    public static void setTestCaseId(String testCaseId) {
+        testCaseIdHolder.set(testCaseId);
+        counter.get().set(0);
+    }
+
+    public static void takeScreenshot(Page page) {
+
+        String testCaseId = testCaseIdHolder.get();
+
+        int index = counter.get().incrementAndGet();
+        String fileName = testCaseId + "-" + index;
 
         byte[] screenshot = page.screenshot(
-                            new Page.ScreenshotOptions().setFullPage(true));
+                new Page.ScreenshotOptions().setFullPage(true)
+        );
 
         Allure.getLifecycle().addAttachment(
-                timeStamp,
+                fileName,
                 "image/png",
                 "png",
                 new ByteArrayInputStream(screenshot)
-            );
+        );
     }
 }

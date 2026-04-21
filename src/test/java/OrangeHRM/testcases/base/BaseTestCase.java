@@ -4,6 +4,8 @@ import com.OrangeHRM.managers.BasePage;
 import com.OrangeHRM.managers.DriverFactory;
 import com.OrangeHRM.utils.ScreenshotUtils;
 import io.qameta.allure.Step;
+
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -19,18 +21,22 @@ public class BaseTestCase {
         basePage.page.close();
     }
 
-    @Step("And: Take Screenshot")
-    public void TakeScreenshot(){
-        ScreenshotUtils screenshot;
-        screenshot = new ScreenshotUtils();
-        basePage.page.waitForTimeout(5);
-        screenshot.TakeScreenshot(basePage.page);
-    }
+    // @Step("And: Take Screenshot")
+    // public void TakeScreenshot(){
+    //     ScreenshotUtils screenshot;
+    //     screenshot = new ScreenshotUtils();
+    //     basePage.page.waitForTimeout(5);
+    //     screenshot.TakeScreenshot(basePage.page);
+    // }
 
     @BeforeMethod
-    public void setUpBaseTest() {
-         initBasePage();
-        
+    public void setUpBaseTest(ITestResult result) {
+
+        initBasePage();
+
+        String testCaseId = getTestCaseId(result);
+
+        ScreenshotUtils.setTestCaseId(testCaseId);
     }
     @AfterMethod
     public void tearDown() {
