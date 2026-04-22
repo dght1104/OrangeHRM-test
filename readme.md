@@ -1,9 +1,7 @@
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
-
-scoop install allure
-
-rerun: mvn clean test
+First: 
+mvn clean install -DskipTests            
+mvn exec:java "-Dexec.mainClass=com.microsoft.playwright.CLI" "-Dexec.args=install"
+mvn test "-DsuiteXmlFile=src/test/resources/suites/testng.xml"
 
 
 1. LOGIN MODULE

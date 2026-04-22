@@ -21,6 +21,10 @@ public class BaseTestCase {
         basePage.page.close();
     }
 
+    public void takeScreenshot() {
+    ScreenshotUtils.takeScreenshot(basePage.page);
+}
+
     // @Step("And: Take Screenshot")
     // public void TakeScreenshot(){
     //     ScreenshotUtils screenshot;
@@ -30,13 +34,8 @@ public class BaseTestCase {
     // }
 
     @BeforeMethod
-    public void setUpBaseTest(ITestResult result) {
-
+    public void setUpBaseTest() {
         initBasePage();
-
-        String testCaseId = getTestCaseId(result);
-
-        ScreenshotUtils.setTestCaseId(testCaseId);
     }
     @AfterMethod
     public void tearDown() {
