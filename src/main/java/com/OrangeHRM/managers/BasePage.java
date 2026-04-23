@@ -249,12 +249,10 @@ public class BasePage {
         page.waitForLoadState(LoadState.NETWORKIDLE);
     }
 
-    @Step("Wait For {url}")
     public void waitForURL(String url) {
         page.waitForURL("**/" + url + "*");
     }
 
-    @Step("Verify The URL Contains {url}")
     public boolean verifyURLContains(String url) {
         return page.url().contains("/" + url);
     }

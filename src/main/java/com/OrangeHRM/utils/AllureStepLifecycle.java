@@ -25,7 +25,7 @@ public class AllureStepLifecycle implements StepLifecycleListener {
 
             String name = element.getClassName();
 
-            if (name.startsWith("icrm.") && !name.contains("AllureStepLifecycle")) {
+            if (name.startsWith("OrangeHRM.") && !name.contains("AllureStepLifecycle")) {
                 int lastDot = name.lastIndexOf(".");
                 className = name.substring(0, lastDot); // lấy package
 

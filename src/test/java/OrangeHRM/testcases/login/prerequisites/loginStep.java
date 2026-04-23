@@ -23,14 +23,17 @@ public class loginStep {
         indexComponent.enterPassword(password);
     }
 
+    @Step("Click on Login Button")
     public void clickLoginButton() {
         indexComponent.clickLoginButton();
     }
 
+    @Step("Verify User is Logged In")
     public void verifyUserIsLoggedIn() {
         indexComponent.verifyUserIsLoggedIn();
     }
 
+    @Step("Verify User is Not Logged In")
     public void verifyUserIsNotLoggedIn() {
        indexComponent.verifyUserIsNotLoggedIn();
     }
