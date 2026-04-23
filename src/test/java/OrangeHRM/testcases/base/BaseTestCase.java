@@ -21,6 +21,7 @@ public class BaseTestCase {
         basePage.page.close();
     }
 
+    @Step("And: Take Screenshot")
     public void takeScreenshot() {
     ScreenshotUtils.takeScreenshot(basePage.page);
 }

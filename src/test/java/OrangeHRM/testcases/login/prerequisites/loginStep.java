@@ -1,8 +1,9 @@
-package OrangeHRM.testcases.test.prequesuite;
+package OrangeHRM.testcases.login.prerequisites;
 
 import com.OrangeHRM.managers.BasePage;
 
 import OrangeHRM.pom.components.IndexComponent;
+import io.qameta.allure.Step;
 
 public class loginStep {
     private IndexComponent indexComponent;
@@ -11,7 +12,8 @@ public class loginStep {
         indexComponent = new IndexComponent(basePage);
     }
     
-    public void login() {
-        indexComponent.navigateToIndex();
+    @Step("Navigate to Login Page")
+    public void navigateToLoginPage() {
+        indexComponent.navigateToLoginPage();
     }
 }

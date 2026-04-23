@@ -1,5 +1,6 @@
 package OrangeHRM.pom.components;
 
+import com.OrangeHRM.constants.AppConfig;
 import com.OrangeHRM.managers.BasePage;
 
 import OrangeHRM.pom.pages.homePage;
@@ -10,7 +11,7 @@ public class IndexComponent extends homePage{
         super(basePage.page);
     }
 
-    public void navigateToIndex() {
-        navigateToUrl("https://opensource-demo.orangehrmlive.com");
+    public void navigateToLoginPage() {
+        navigateToUrl(AppConfig.BASEURL);
     }
 }

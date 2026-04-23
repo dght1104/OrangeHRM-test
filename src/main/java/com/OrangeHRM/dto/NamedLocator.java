@@ -7,11 +7,6 @@ public record NamedLocator(Locator locator, String name)  {
         return new NamedLocator(locator, name);
     }
 
-    public NamedLocator first() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'first'");
-    }
-
     public Locator get() {
         return locator;
     }

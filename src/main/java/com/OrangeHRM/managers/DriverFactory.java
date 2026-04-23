@@ -6,7 +6,6 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.ViewportSize;
-import java.text.MessageFormat;
 import java.util.Arrays;
 
 public class DriverFactory {

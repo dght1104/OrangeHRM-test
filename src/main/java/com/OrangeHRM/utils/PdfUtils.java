@@ -2,9 +2,7 @@ package com.OrangeHRM.utils;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-
 import java.nio.file.Path;
-import java.util.Arrays;
 
 public class PdfUtils {
 

@@ -1,9 +1,6 @@
 package com.OrangeHRM.utils;
 
 import com.OrangeHRM.dto.NamedLocator;
-import com.OrangeHRM.managers.BasePage;
-import com.microsoft.playwright.FrameLocator;
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class ElementUtils {

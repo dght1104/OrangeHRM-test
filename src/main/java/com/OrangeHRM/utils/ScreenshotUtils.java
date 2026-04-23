@@ -1,12 +1,15 @@
 package com.OrangeHRM.utils;
 
+import com.OrangeHRM.annotations.TestCaseId;
 import com.microsoft.playwright.Page;
 import io.qameta.allure.Allure;
-
+import java.lang.reflect.Method;
 import java.io.ByteArrayInputStream;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import java.util.Date;
 import java.nio.file.Path;
 import java.nio.file.Files;
@@ -30,8 +33,25 @@ public class ScreenshotUtils {
         return;
     }
 
-    String testCaseId = testCaseIdHolder.get();
-    if (testCaseId == null) testCaseId = "NO_TC_ID";
+    String testCaseId = "Unknown";
+
+try {
+    ITestResult result = Reporter.getCurrentTestResult();
+    if (result != null) {
+
+        Method method = result.getMethod().getConstructorOrMethod().getMethod();
+
+        if (method.isAnnotationPresent(TestCaseId.class)) {
+            TestCaseId annotation = method.getAnnotation(TestCaseId.class);
+            testCaseId = annotation.value(); // 🔥 lấy TCID
+        } else {
+            testCaseId = result.getMethod().getMethodName(); // fallback
+        }
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+}
+
 
     int index = counter.get().incrementAndGet();
 
