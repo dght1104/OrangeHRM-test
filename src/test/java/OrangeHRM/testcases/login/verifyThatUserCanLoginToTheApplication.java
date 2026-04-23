@@ -26,7 +26,6 @@ public class verifyThatUserCanLoginToTheApplication extends BaseTestCase {
         loginStep.clickLoginButton();
         // Then user should be logged in successfully
         loginStep.verifyUserIsLoggedIn();
-
         // Take a screenshot after successful login
         takeScreenshot();
     }
