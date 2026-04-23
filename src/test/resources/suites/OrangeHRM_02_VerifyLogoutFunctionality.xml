@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Logout Suite">
+    <test name="Logout Functionality Test">
+        <classes>
+            <class name="OrangeHRM.testcases.logout.verifyThatUserCanLogoutTheApplication"/>
+        </classes>
+    </test>
+</suite>
