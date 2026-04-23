@@ -17,7 +17,7 @@ public class ElementUtils {
 
     // ============== Text Button ==============
     public static NamedLocator elementBtnByText(Page page, String text, String locatorName) {
-        return NamedLocator.of(page.locator("//button//*[normalize-space()='" + text + "']"), locatorName);
+        return NamedLocator.of(page.locator("//button[normalize-space()='" + text + "']"), locatorName);
     }
 
     // ============== Table ==============
@@ -30,7 +30,13 @@ public class ElementUtils {
         return NamedLocator.of(page.locator("//*[contains(text(),'" + Name + "')]"), locatorName);
     }
 
+    //============= PDF File ==============
     public static NamedLocator PDFFileByName(Page page, String Name, String locatorName) {
         return NamedLocator.of(page.locator("//a[contains(., '" + Name + "')]"), locatorName);
+    }
+
+    //============= Input Field ==============
+    public static NamedLocator inputFieldByName(Page page, String Name, String locatorName) {
+        return NamedLocator.of(page.locator("//input[contains(@placeholder, '" + Name + "')]"), locatorName);
     }
 }

@@ -16,4 +16,22 @@ public class loginStep {
     public void navigateToLoginPage() {
         indexComponent.navigateToLoginPage();
     }
+
+    @Step("Enter Username and Password")
+    public void enterUsernameAndPassword(String username, String password) {
+        indexComponent.enterUsername(username);
+        indexComponent.enterPassword(password);
+    }
+
+    public void clickLoginButton() {
+        indexComponent.clickLoginButton();
+    }
+
+    public void verifyUserIsLoggedIn() {
+        indexComponent.verifyUserIsLoggedIn();
+    }
+
+    public void verifyUserIsNotLoggedIn() {
+       indexComponent.verifyUserIsNotLoggedIn();
+    }
 }
