@@ -39,4 +39,9 @@ public class ElementUtils {
     public static NamedLocator inputFieldByName(Page page, String Name, String locatorName) {
         return NamedLocator.of(page.locator("//input[contains(@placeholder, '" + Name + "')]"), locatorName);
     }
+
+    //============= Get Element By Class ==============
+    public static NamedLocator elementByClass(Page page, String className, String locatorName) {
+        return NamedLocator.of(page.locator("//*[contains(@class, '" + className + "')]"), locatorName);
+    }
 }

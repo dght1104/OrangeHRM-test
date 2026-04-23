@@ -3,9 +3,8 @@ package OrangeHRM.pom.pages;
 import com.OrangeHRM.managers.BasePage;
 import com.microsoft.playwright.Page;
 
-public class homePage extends BasePage {
-
-    public homePage(Page page) {
+public class indexPage extends BasePage {
+    public indexPage(Page page) {
         super(page);
     }
     

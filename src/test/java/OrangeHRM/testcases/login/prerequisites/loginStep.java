@@ -2,7 +2,7 @@ package OrangeHRM.testcases.login.prerequisites;
 
 import com.OrangeHRM.managers.BasePage;
 
-import OrangeHRM.pom.components.IndexComponent;
+import OrangeHRM.pom.components.index.IndexComponent;
 import io.qameta.allure.Step;
 
 public class loginStep {
@@ -36,5 +36,16 @@ public class loginStep {
     @Step("Verify User is Not Logged In")
     public void verifyUserIsNotLoggedIn() {
        indexComponent.verifyUserIsNotLoggedIn();
+    }
+
+    @Step("Login To The Application")
+    public void loginToTheApplication(String username, String password) {
+        navigateToLoginPage();
+        enterUsernameAndPassword(username, password);
+        clickLoginButton();
+    }
+
+    public void verifyThatLoginPageIsDisplayed() {
+        indexComponent.verifyThatLoginPageIsDisplayed();
     }
 }
