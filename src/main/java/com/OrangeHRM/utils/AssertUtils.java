@@ -36,4 +36,11 @@ public class AssertUtils {
             }
         }
     }
+
+    public static void assertEquals(Object expected, Object actual, String message) {
+        if (expected == null && actual == null) return;
+        if (expected != null && expected.equals(actual)) return;
+
+        Assert.fail(message + " | Expected: " + expected + " but found: " + actual);
+    }
 }

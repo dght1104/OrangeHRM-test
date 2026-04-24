@@ -45,6 +45,11 @@ public class BasePage {
         namedLocator.locator().fill(value);
     }
 
+    @Step("Get value from {namedLocator.name}")
+    public String getValue(NamedLocator namedLocator) {
+        return namedLocator.locator().inputValue();
+    }
+
     @Step("Check {namedLocator.name} is clickable")
     public boolean isClickable(NamedLocator namedLocator) {
         return namedLocator.locator().isVisible() && namedLocator.locator().isEnabled();

@@ -50,5 +50,18 @@ public class ElementUtils {
         return NamedLocator.of(page.locator("//" +tagName+"[contains(@class, '" + className + "' ) and ( text()= '" + text + "')]"), locatorName);
     }
 
+    //============ Get Element By Text And Tag =============
+    public static NamedLocator elementByTextAndTag(Page page, String tagName, String text, String locatorName) {
+        return NamedLocator.of(page.locator("//" +tagName+"[normalize-space()='" + text + "']"), locatorName);
+    }
 
+    //============ Get Element By Class Tag Anh Index =============
+    public static NamedLocator elementByClassTagAndIndex(
+        Page page, String tagName, String className, int index, String locatorName) {
+
+    String xpath = String.format("(//%s[contains(@class,'%s')])[%d]",
+            tagName, className, index);
+
+    return NamedLocator.of(page.locator(xpath), locatorName);
+}
 }
