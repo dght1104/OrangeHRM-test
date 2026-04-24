@@ -25,11 +25,6 @@ public class ElementUtils {
         return NamedLocator.of(page.locator("//table[.//th[contains(text(),'" +text + "')]]"), locatorName);
     }
 
-    // ============== Name ==============
-    public static NamedLocator elementByName(Page page, String Name, String locatorName) {
-        return NamedLocator.of(page.locator("//*[contains(text(),'" + Name + "')]"), locatorName);
-    }
-
     //============= PDF File ==============
     public static NamedLocator PDFFileByName(Page page, String Name, String locatorName) {
         return NamedLocator.of(page.locator("//a[contains(., '" + Name + "')]"), locatorName);
@@ -44,4 +39,16 @@ public class ElementUtils {
     public static NamedLocator elementByClass(Page page, String className, String locatorName) {
         return NamedLocator.of(page.locator("//*[contains(@class, '" + className + "')]"), locatorName);
     }
+
+     //============ Get Element By Class and Tag =============
+    public static NamedLocator elementByClassAndTag(Page page, String className, String tagName, String locatorName) {
+        return NamedLocator.of(page.locator("//" +tagName+"[contains(@class, '" + className + "')]" ), locatorName);
+    }
+
+    //============ Get Element By Class and Text And Tag =============
+    public static NamedLocator elementByClassAndTextAndTag(Page page, String tagName,String className, String text, String locatorName) {
+        return NamedLocator.of(page.locator("//" +tagName+"[contains(@class, '" + className + "' ) and ( text()= '" + text + "')]"), locatorName);
+    }
+
+
 }
