@@ -188,11 +188,26 @@ public class BasePage {
         String tag = locator.evaluate("el => el.tagName.toLowerCase()").toString();
 
         switch (tag) {
-
             case "input":
             case "textarea":
-                setText(namedLocator, value);
+            String placeholder = locator.getAttribute("placeholder");
+
+            if (placeholder != null && placeholder.contains("Type for hints")) {
+                locator.fill(value);
+
+                waitForTimeout(2);
+                locator.page().waitForSelector("div[role='option']");
+
+                // click first suggestion
+                locator.page()
+                        .locator("div[role='option']")
+                        .first()
+                        .click();
                 break;
+            }
+
+            setText(namedLocator, value);
+            break;
 
             case "mat-checkbox":
                 setCheckbox(namedLocator, Boolean.parseBoolean(value));
@@ -213,9 +228,30 @@ public class BasePage {
                 clickOnBtn(namedLocator);
                 break;
 
+            case "div":
+
+            // =========================
+            // OXD DROPDOWN (OrangeHRM)
+            // =========================
+            if (locator.getAttribute("class") != null &&
+                locator.getAttribute("class").contains("oxd-select-text")) {
+
+                locator.click();
+
+                Locator option = locator.page()
+                        .locator(".oxd-select-dropdown div")
+                        .filter(new Locator.FilterOptions().setHasText(value));
+
+                option.first().waitFor();
+                option.first().click();
+            }
+            break;
+            
+
             default:
                 // log.warn("Unsupported element: {}", tag);
         }
+        
     }
 
     @Step("Fill a form")
@@ -225,8 +261,7 @@ public class BasePage {
         }
     }
 
-    // ================================= Wait For Element
-    // ===============================
+    // ================================= Wait For Elements ================================
     @Step("Wait for {namedLocator.name} appear")
     public void waitForElement(NamedLocator namedLocator) {
         namedLocator.locator().waitFor();

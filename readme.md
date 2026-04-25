@@ -1,7 +1,7 @@
 First: 
 mvn clean install -DskipTests            
 mvn exec:java "-Dexec.mainClass=com.microsoft.playwright.CLI" "-Dexec.args=install"
-mvn test "-DsuiteXmlFile=src/test/resources/suites/testng.xml"
+mvn test "-DsuiteXmlFile=stestng.xml"
 
 
 1. LOGIN MODULE

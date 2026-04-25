@@ -16,10 +16,11 @@ public class addEmployeeComponent extends employeePage {
     NamedLocator employeeIdInput= NamedLocator.of(page.locator("//label[normalize-space()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input") ,"Employee Id Input");
     NamedLocator saveBtn= ElementUtils.elementBtnByText(page,"Save", "Save Button");
    
-    public void addEmployee(String firstName, String lastName, String middleName) {
+    public void addEmployee(String firstName, String lastName, String middleName, String ID) {
         setText(employeeFirstNameInput, firstName);
         setText(employeeLastNameInput, lastName);
         setText(employeeMiddleInput, middleName);
+        setText(employeeIdInput, ID);
     }
 
     public void clickSaveBtn() {

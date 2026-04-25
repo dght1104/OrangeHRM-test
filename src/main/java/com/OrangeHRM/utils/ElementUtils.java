@@ -36,7 +36,7 @@ public class ElementUtils {
     }
 
     // ============ Get Element By Class and Tag =============
-    public static NamedLocator elementByClassAndTag(Page page,  String tagName,String className, String locatorName) {
+    public static NamedLocator elementByClassAndTag(Page page, String tagName, String className, String locatorName) {
         return NamedLocator.of(page.locator("//" + tagName + "[contains(@class, '" + className + "')]"), locatorName);
     }
 
@@ -62,10 +62,10 @@ public class ElementUtils {
 
         return NamedLocator.of(page.locator(xpath), locatorName);
     }
-    
+
     // ============ Get Element By Class and text ====
     public static NamedLocator elementByClassAndText(Page page, String tagName, String text, String locatorName) {
-        String xpath = String.format("//%s[contains(.,'%s')]",tagName, text);
+        String xpath = String.format("//%s[contains(.,'%s')]", tagName, text);
         return NamedLocator.of(page.locator(xpath), locatorName);
     }
 

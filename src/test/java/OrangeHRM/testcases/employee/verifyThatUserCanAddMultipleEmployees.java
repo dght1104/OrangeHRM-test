@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.OrangeHRM.annotations.TestCaseId;
+import com.OrangeHRM.utils.IdGenerator;
 
 public class verifyThatUserCanAddMultipleEmployees extends BaseTestCase {
     private employeeStep employeeStep;
@@ -29,19 +30,19 @@ public class verifyThatUserCanAddMultipleEmployees extends BaseTestCase {
     @DataProvider(name = "employees")
     public Object[][] getEmployees() {
         return new Object[][] {
-                { "John", "Ramsay", "Doe" },
-                { "Jane", "Marie", "Smith" },
-                { "Alex", "Brown", "Johnson" }
+                { "John", "Ramsay", "Doe", IdGenerator.generateEmployeeId() },
+                { "Jane", "Marie", "Smith", IdGenerator.generateEmployeeId() },
+                { "Alex", "Brown", "Johnson", IdGenerator.generateEmployeeId() }
         };
     }
 
     @Test(description = "Verify that user can add multiple employees", dataProvider = "employees")
     @TestCaseId("3.2")
-    public void verifyThatUserCanAddMultipleEmployees(String first, String middle, String last) {
+    public void verifyThatUserCanAddMultipleEmployees(String first, String middle, String last, String empID) {
         // And the user clicks on the Add Employee button
         employeeStep.navigateToAddEmployeePage();
         // And the user fills in the employee details
-        employeeStep.addEmployee(first, middle, last);
+        employeeStep.addEmployee(first, middle, last, empID);
         // And gets the employee id
         String employeeId = employeeStep.getEmployeeId();
         // And the user clicks on the Save button

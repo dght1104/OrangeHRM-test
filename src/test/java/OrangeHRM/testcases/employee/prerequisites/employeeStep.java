@@ -41,8 +41,8 @@ public class employeeStep {
     }
 
     @Step("Add new employee with first name: {firstName}, middle name: {middleName} and last name: {lastName}") 
-    public void addEmployee(String firstName, String middleName, String lastName) {
-        addEmployeeComponent.addEmployee(firstName, lastName, middleName);
+    public void addEmployee(String firstName, String middleName, String lastName, String ID) {
+        addEmployeeComponent.addEmployee(firstName, lastName, middleName, ID);
         addEmployeeComponent.getEmployeeId();
     }
 

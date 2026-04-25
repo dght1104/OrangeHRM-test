@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.OrangeHRM.annotations.TestCaseId;
+import com.OrangeHRM.utils.IdGenerator;
 
 public class verifyThatUserCanAddNewEmployee extends BaseTestCase {
     private employeeStep employeeStep;
@@ -24,7 +25,7 @@ public class verifyThatUserCanAddNewEmployee extends BaseTestCase {
     String lastname = "Doe";
     String middlename = "Ramsay";
     String name = firstname + " " + middlename;
-
+String empID = IdGenerator.generateEmployeeId();
     @Test(description = "Verify that user can add new employee")
     @TestCaseId("3.1.1")
     public void verifyThatUserCanAddNewEmployee() {
@@ -35,13 +36,11 @@ public class verifyThatUserCanAddNewEmployee extends BaseTestCase {
         // And the user clicks on the Add Employee button
         employeeStep.navigateToAddEmployeePage();
         // And the user fills in the employee details
-        employeeStep.addEmployee(firstname, middlename, lastname);
-        // And gets the employee id
-        String employeeId = employeeStep.getEmployeeId();
+        employeeStep.addEmployee(firstname, middlename, lastname, empID);
         // And the user clicks on the Save button
         employeeStep.clickSaveBtn();
         // Then the new employee should be added successfully
-        employeeStep.verifyThatEmployeeIsAdded(employeeId, name);
+        employeeStep.verifyThatEmployeeIsAdded(empID, name);
         // And take a screenshot
         takeScreenshot();
     }

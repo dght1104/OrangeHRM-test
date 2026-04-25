@@ -13,6 +13,7 @@ public class navbarComponent extends homePage {
     NamedLocator UserMenu = ElementUtils.elementByClass(page, "oxd-userdropdown-tab", "User Menu");
     NamedLocator LogoutBtn = ElementUtils.elementByText(page, "Logout", "Logout Button");
     NamedLocator PIMBtn = ElementUtils.elementByClassAndTextAndTag(page,"span","oxd-text oxd-text--span oxd-main-menu-item--name","PIM","PIM btn");
+    NamedLocator AdminBtn = ElementUtils.elementByClassAndTextAndTag(page,"span","oxd-text oxd-text--span oxd-main-menu-item--name","Admin","Admin btn");
     
     public void clickUserMenu() {
         clickOnBtn(UserMenu);
@@ -28,6 +29,14 @@ public class navbarComponent extends homePage {
 
     public void verifyEmployeePage() {
         isOnPage("pim/viewEmployeeList");
+    }
+
+    public void navigateToAdmin() {
+        clickOnBtn(AdminBtn);
+    }
+
+    public void verifyAdminPage() {
+        isOnPage("admin/viewSystemUsers");
     }
     
 }

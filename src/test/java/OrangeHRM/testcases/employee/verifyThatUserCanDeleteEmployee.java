@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.OrangeHRM.annotations.TestCaseId;
+import com.OrangeHRM.utils.IdGenerator;
 
 public class verifyThatUserCanDeleteEmployee extends BaseTestCase {
     private employeeStep employeeStep;
@@ -23,6 +24,7 @@ public class verifyThatUserCanDeleteEmployee extends BaseTestCase {
     String lastname = "JARELfs";
     String middlename = "Billies";
     String name = firstname + " " + middlename;
+    String empID = IdGenerator.generateEmployeeId();
     
     @Test(description = "Verify that user can delete employee")
     @TestCaseId("3.3")
@@ -34,7 +36,7 @@ public class verifyThatUserCanDeleteEmployee extends BaseTestCase {
         // And the user clicks on the Add Employee button
         employeeStep.navigateToAddEmployeePage();
         // And the user fills in the employee details
-        employeeStep.addEmployee(firstname, middlename, lastname);
+        employeeStep.addEmployee(firstname, middlename, lastname, empID);
         // And gets the employee id
         String employeeId = employeeStep.getEmployeeId();
         // And the user clicks on the Save button
