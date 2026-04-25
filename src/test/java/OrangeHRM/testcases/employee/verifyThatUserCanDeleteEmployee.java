@@ -25,7 +25,7 @@ public class verifyThatUserCanDeleteEmployee extends BaseTestCase {
     String name = firstname + " " + middlename;
     
     @Test(description = "Verify that user can delete employee")
-    @TestCaseId("3.1")
+    @TestCaseId("3.3")
     public void verifyThatUserCanDeleteEmployee() {
        // When the user logs in to the application
         loginStep.loginToTheApplication("Admin", "admin123");

@@ -6,6 +6,11 @@
             <class name="OrangeHRM.testcases.employee.verifyThatUserCanAddNewEmployee"/>
         </classes>
     </test>
+    <test name="Add Multiple Employees">
+        <classes>
+            <class name="OrangeHRM.testcases.employee.verifyThatUserCanAddMultipleEmployees"/>
+        </classes>
+    </test>
     <test name = "Delete Employee">
         <classes>
             <class name="OrangeHRM.testcases.employee.verifyThatUserCanDeleteEmployee"/>

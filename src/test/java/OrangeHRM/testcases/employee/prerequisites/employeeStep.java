@@ -67,7 +67,6 @@ public class employeeStep {
         searchEmployeeComponent.searchEmployeeById(employeeId);
         searchEmployeeComponent.clickOnSearchBtn();
         String actualEmployeeName = listEmployeeComponent.getTheFirstEmployeeInList(employeeId);
-        
         AssertUtils.assertEquals(actualEmployeeName, expectedString, "Verify that the employee is added successfully");
     }
 
