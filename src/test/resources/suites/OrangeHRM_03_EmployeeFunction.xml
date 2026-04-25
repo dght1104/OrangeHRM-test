@@ -1,9 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Employee Suite">
+<suite name="Employee Function">
     <test name="Add New Employee">
         <classes>
             <class name="OrangeHRM.testcases.employee.verifyThatUserCanAddNewEmployee"/>
+        </classes>
+    </test>
+    <test name = "Delete Employee">
+        <classes>
+            <class name="OrangeHRM.testcases.employee.verifyThatUserCanDeleteEmployee"/>
         </classes>
     </test>
 </suite>

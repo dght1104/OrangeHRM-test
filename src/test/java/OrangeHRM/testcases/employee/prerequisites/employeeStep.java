@@ -67,6 +67,22 @@ public class employeeStep {
         searchEmployeeComponent.searchEmployeeById(employeeId);
         searchEmployeeComponent.clickOnSearchBtn();
         String actualEmployeeName = listEmployeeComponent.getTheFirstEmployeeInList(employeeId);
+        
         AssertUtils.assertEquals(actualEmployeeName, expectedString, "Verify that the employee is added successfully");
+    }
+
+    @Step("Click on the Delete button of the searched employee")
+    public void deleteTheSearchedEmployee() {
+        listEmployeeComponent.clickTheDeleteBtn();
+        listEmployeeComponent.confirmDeleteAction();
+    }
+
+    @Step("Verify that the employee is deleted")
+    public void verifyThatEmployeeIsDeleted(String employeeId) {
+        navbarEmployeeComponent.clickOnEmployeeListBtn();
+        searchEmployeeComponent.searchEmployeeById(employeeId);
+        searchEmployeeComponent.clickOnSearchBtn();
+        String recordCount = listEmployeeComponent.getRecordCount();
+        AssertUtils.assertEquals("No Records Found", recordCount, "Verify that the employee is deleted");
     }
 }

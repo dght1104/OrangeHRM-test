@@ -4,6 +4,6 @@
     <suite-files>
         <suite-file path="src/test/resources/suites/OrangeHRM_01_VerifyLoginFunctionality.xml"/>
         <suite-file path="src/test/resources/suites/OrangeHRM_02_VerifyLogoutFunctionality.xml"/>
-        <suite-file path="src/test/resources/suites/OrangeHRM_03_VerifyAddNewUserFunction.xml"/>
+        <suite-file path="src/test/resources/suites/OrangeHRM_03_EmployeeFunction.xml"/>
     </suite-files>
 </suite>

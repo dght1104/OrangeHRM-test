@@ -21,14 +21,15 @@ public class BaseTestCase {
 
     @Step("And: Take Screenshot")
     public void takeScreenshot() {
-    ScreenshotUtils.takeScreenshot(basePage.page);
+        basePage.waitForTimeout(2);
+        ScreenshotUtils.takeScreenshot(basePage.page);
     }
-
 
     @BeforeMethod
     public void setUpBaseTest() {
         initBasePage();
     }
+
     @AfterMethod
     public void tearDown() {
         closeBrowser();

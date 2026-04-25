@@ -30,7 +30,7 @@ public class BasePage {
         return browserContext;
     }
 
-     public void switchTo(Page newPage) {
+    public void switchTo(Page newPage) {
         this.page = newPage;
     }
 
@@ -279,5 +279,7 @@ public class BasePage {
         locator.waitFor(new Locator.WaitForOptions()
                 .setState(WaitForSelectorState.VISIBLE));
 
-        locator.hover();}
+        locator.hover();
+    }
+
 }

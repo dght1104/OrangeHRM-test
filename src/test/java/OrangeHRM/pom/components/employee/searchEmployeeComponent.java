@@ -21,9 +21,4 @@ public class searchEmployeeComponent extends employeePage {
     public void clickOnSearchBtn() {
         clickOnBtn(searchBtn);
     }
-
-    
-
-
-
 }

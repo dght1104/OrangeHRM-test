@@ -46,6 +46,7 @@ public class IndexComponent extends homePage{
     }
 
     public void verifyUserIsNotLoggedIn() {
+        waitForTimeout(2);
         AssertUtils.verifyFalse(
             page.url().contains("/dashboard/index"),
             "User is logged in successfully."
@@ -53,6 +54,7 @@ public class IndexComponent extends homePage{
     }
 
     public void verifyThatLoginPageIsDisplayed() {
+        waitForTimeout(2);
         AssertUtils.verifyTrue(
             verifyElementVisible(loginHeader),
             "Login page is not displayed."
