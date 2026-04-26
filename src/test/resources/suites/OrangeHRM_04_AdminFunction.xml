@@ -1,6 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Admin Function">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="OrangeHRM.listeners.AllureListener" />
+    </listeners>
     <test name="Add New Admin">
         <classes>
             <class name="OrangeHRM.testcases.admin.VerifyThatUserCanCreateAdminFromEmployeeSuccessfully"/>
