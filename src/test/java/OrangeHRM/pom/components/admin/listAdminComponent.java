@@ -3,10 +3,8 @@ package OrangeHRM.pom.components.admin;
 import com.OrangeHRM.dto.NamedLocator;
 import com.OrangeHRM.managers.BasePage;
 import com.OrangeHRM.utils.ElementUtils;
-
-import OrangeHRM.pom.pages.employeePage;
-import io.qameta.allure.internal.shadowed.jackson.databind.util.Named;
-public class listAdminComponent extends employeePage {
+import OrangeHRM.pom.pages.adminPage;
+public class listAdminComponent extends adminPage {
     public listAdminComponent(BasePage basePage) {
         super(basePage.page);
     }

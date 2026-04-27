@@ -3,9 +3,9 @@ package OrangeHRM.pom.components.admin;
 import com.OrangeHRM.dto.NamedLocator;
 import com.OrangeHRM.managers.BasePage;
 import com.OrangeHRM.utils.ElementUtils;
-import OrangeHRM.pom.pages.employeePage;
+import OrangeHRM.pom.pages.adminPage;
 
-public class navbarAdminComponent extends employeePage {
+public class navbarAdminComponent extends adminPage {
     public navbarAdminComponent(BasePage basePage) {
         super(basePage.page);}
 
