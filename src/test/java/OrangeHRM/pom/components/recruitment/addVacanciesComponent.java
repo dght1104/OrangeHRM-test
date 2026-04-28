@@ -10,38 +10,30 @@ public class addVacanciesComponent extends adminPage {
                 super(basePage.page);
         }
 
-        NamedLocator CandidateFirstNameInput = NamedLocator.of(page
-                        .locator("//div[contains(@class,'--name-grouped-field')]//input[@placeholder='First Name']"),
-                        "First Name Input");
-        NamedLocator CandidateLastNameInput = NamedLocator.of(
-                        page.locator("//div[contains(@class,'--name-grouped-field')]//input[@placeholder='Last Name']"),
-                        "Last Name Input");
-        NamedLocator CandidateMiddleInput = NamedLocator.of(page
-                        .locator("//div[contains(@class,'--name-grouped-field')]//input[@placeholder='Middle Name']"),
-                        "Middle Name Input");
-        NamedLocator CandidateEmailInput = NamedLocator.of(page
-                        .locator("//label[text()='Email']/ancestor::div[contains(@class,'oxd-input-group')]//input"),
-                        "Email Input");
-        NamedLocator CandidateContactInput = NamedLocator.of(page
-                        .locator("//label[text()='Contact Number']/ancestor::div[contains(@class,'oxd-input')]//input"),
-                        "Contact Number Input");
-        NamedLocator CandidateVancancyDropdown = NamedLocator.of(page
-                        .locator("//label[text()='Vacancy']/following::div[contains(@class,'oxd-select-text-input')]"),
-                        "Vacancy Dropdown");
+        NamedLocator VacancyInput = NamedLocator.of(page
+                        .locator("//label[text()='Vacancy Name']/following::input[1]"),
+                        "Vacancy Input");
+        NamedLocator JobTitleInput = NamedLocator.of(
+                        page.locator("//label[contains(text(),'Job Title')]/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text-input')]"),
+                        "Job Title Input");
+        NamedLocator DescriptionInput = NamedLocator.of(page
+                        .locator("//label[contains(text(),'Description')]/ancestor::div[contains(@class,'oxd-input-group')]//textarea"),
+                        "Description");
+        NamedLocator HiringManagerInput = NamedLocator.of(page
+                        .locator("//label[contains(text(),'Hiring Manager')]/ancestor::div[contains(@class,'oxd-input-group')]//input"),
+                        "Hiring Manager");
+        NamedLocator NumberOfPositionsInput = NamedLocator.of(page
+                        .locator("//label[contains(text(),'Number of Positions')]/ancestor::div[contains(@class,'oxd-input-group')]//input"),
+                        "Number of Positions");
         NamedLocator SaveButton = ElementUtils.elementBtnByText(page, "Save", "Save Button");
 
-        public void AddCandidate(String firstName, String lastName, String middleName, String vacancy) {
-                fillValue(CandidateFirstNameInput, firstName);
-                fillValue(CandidateLastNameInput, lastName);
-                fillValue(CandidateMiddleInput, middleName);
-                String phone = "09" + (int) (Math.random() * 1_000_000_00);
-                fillValue(CandidateContactInput, phone);
-                fillValue(CandidateVancancyDropdown, vacancy);
-                String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "_"
-                                + (int) (Math.random() * 1_000) + "@example.com";
-                fillValue(CandidateEmailInput, email);
+        public void addVacancies(String vacancyName, String jobTitle, String description, String hiringManager, String numberOfPositions) {
+                fillValue(VacancyInput,vacancyName);
+                fillValue(JobTitleInput, jobTitle);
+                fillValue(DescriptionInput, description);
+                fillValue(HiringManagerInput, hiringManager);
+                fillValue(NumberOfPositionsInput, numberOfPositions);
         }
-
         public void clickSaveButton() {
                 clickOnBtn(SaveButton);
         }
