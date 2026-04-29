@@ -1,41 +1,49 @@
 # Playwright Automation Testing Framework
 
-# 1. Overview
-# This project is an automation testing framework built using Playwright with Java,
-# following the Page Object Model (POM) design pattern.
+## 1. Overview
+This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
 
-# Supports:
-# - Functional Testing
-# - Regression Testing
-# - Cross-browser Testing
-# - Data-driven Testing
+It supports:
+- Functional Testing  
+- Regression Testing  
+- Cross-browser Testing  
+- Data-driven Testing  
 
-# 2. Tech Stack
-# - Java
-# - Playwright
-# - Maven
-# - TestNG
-# - Allure Report
-# - POM Design Pattern
+---
 
-# 3. Project Structure
-# src
-# ├── main/java
-# │   ├── pages
-# │   ├── locators
-# │   └── utils
-# ├── test/java
-# │   ├── tests
-# │   ├── steps
-# │   └── base
-# └── resources
-#     ├── config
-#     └── testdata
+## 2. Tech Stack
+- Language: Java  
+- Automation Tool: Playwright  
+- Build Tool: Maven  
+- Test Framework: TestNG  
+- Reporting: Allure Report  
+- Design Pattern: Page Object Model (POM)  
 
+---
 
-# 4. Setup & Installation
+## 3. Project Structure
+```bash
+src
+├── main/java
+│   ├── pages        # Page Object classes
+│   ├── locators     # UI locators
+│   └── utils        # Utilities
+│
+├── test/java
+│   ├── tests        # Test cases
+│   ├── steps        # Business logic layer
+│   └── base         # Base setup
+│
+└── resources
+    ├── config       # Configuration files
+    └── testdata     # Test data
 
-# Clone project
+```
+
+---
+
+## 4. How to Run 
+```bash
 git clone <your-repo-link>
 cd <project-folder>
 
@@ -45,32 +53,29 @@ mvn clean install -DskipTests
 # Install Playwright browsers
 mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
 
-
-# 5. Run Tests
-
 # Run all tests
 mvn test
 
-# Run TestNG suite
+# Run specific suite
 mvn test -DsuiteXmlFile=testng.xml
 
-
-# 6. Quick Run
+# Full flow (one command)
 mvn clean install -DskipTests && \
 mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install" && \
 mvn test -DsuiteXmlFile=testng.xml
 
-
-# 7. Allure Report
+# Generate Allure report
 allure generate allure-results --clean -o allure-report
 allure open allure-report
+```
+
+---
 
 
-# 8. Notes
-# Ensure testng.xml exists
-# Install browsers before running
-mvn clean
+## 5. Key Features
 
-
-# 9. Author
-# Tran Dong Gia Han
+- Page Object Model (POM) architecture
+- Reusable and maintainable framework
+- Data-driven testing support
+- Cross-browser execution
+- Allure reporting integration
