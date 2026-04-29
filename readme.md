@@ -1,68 +1,78 @@
-**Playwright Automation Testing Framework**
-1. Overview
-        This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
-           It is designed to support:
+# Playwright Automation Testing Framework
 
-Functional Testing
-Regression Testing
-Cross-browser Testing
-Data-driven Testing
-2. Tech Stack
-        Language: Java
-        Automation Tool: Playwright
-        Build Tool: Maven
-        Test Framework: TestNG
-        Reporting: Allure Report
-Design Pattern: Page Object Model (POM)
-3. Project Structure
-        src
-        ├── main/java
-        │   ├── pages        # Page Object classes
-        │   ├── locators     # UI locators
-        │   └── utils        # Utilities
-        │
-        ├── test/java
-        │   ├── tests        # Test cases
-        │   ├── steps        # Business logic layer
-        │   └── base         # Base setup
-        │
-        └── resources
-            ├── config       # Configuration files
-            └── testdata     # Test data
-⚙️ Setup & Installation
-1. Clone project
+## 1. Overview
+This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
+
+It supports:
+- Functional Testing  
+- Regression Testing  
+- Cross-browser Testing  
+- Data-driven Testing  
+
+---
+
+## 2. Tech Stack
+- Language: Java  
+- Automation Tool: Playwright  
+- Build Tool: Maven  
+- Test Framework: TestNG  
+- Reporting: Allure Report  
+- Design Pattern: Page Object Model (POM)  
+
+---
+
+## 3. Project Structure
+```bash
+src
+├── main/java
+│   ├── pages        # Page Object classes
+│   ├── locators     # UI locators
+│   └── utils        # Utilities
+│
+├── test/java
+│   ├── tests        # Test cases
+│   ├── steps        # Business logic layer
+│   └── base         # Base setup
+│
+└── resources
+    ├── config       # Configuration files
+    └── testdata     # Test data
+
+4. Setup & Installation
+4.1 Clone project
 git clone <your-repo-link>
 cd <project-folder>
-2. Build project
+4.2 Build project
 mvn clean install -DskipTests
-3. Install Playwright browsers
+4.3 Install Playwright browsers
 mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
-▶️ Run Tests
-Run all tests
+5. Run Tests
+5.1 Run all tests
 mvn test
-Run specific TestNG suite
-mvn test -DsuiteXmlFile=stestng.xml
-⚡ Quick Run (Full flow)
+5.2 Run specific TestNG suite
+mvn test -DsuiteXmlFile=testng.xml
+6. Quick Run (Full Flow)
 mvn clean install -DskipTests && \
 mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install" && \
-mvn test -DsuiteXmlFile=stestng.xml
-📊 Generate Allure Report
+mvn test -DsuiteXmlFile=testng.xml
+7. Generate Allure Report
 allure generate allure-results --clean -o allure-report
 allure open allure-report
-🧩 Key Features
+8. Key Features
 Page Object Model (POM) architecture
-Reusable and maintainable structure
+Reusable and maintainable framework
 Data-driven testing support
 Cross-browser execution
-🛠 Example Test Flow
+Allure reporting integration
+9. Example Test Flow
 loginStep.loginToTheApplication("Admin", "admin123");
 employeeStep.navigateToEmployeePage();
 employeeStep.addEmployee(firstName, middleName, lastName, empId);
-⚠️ Notes
-Ensure stestng.xml exists (or rename to testng.xml)
-Run browser installation before executing tests
-If gặp lỗi:
+10. Notes
+Ensure testng.xml exists
+Install browsers before running tests
+If errors occur:
 mvn clean
-Author
+11. Author
 
 Tran Dong Gia Han
