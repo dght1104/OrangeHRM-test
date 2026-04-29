@@ -1,22 +1,20 @@
-🧪 Playwright Automation Testing Framework
-📌 Overview
-
-This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
-
-It is designed to support:
+**Playwright Automation Testing Framework**
+1. Overview
+        This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
+           It is designed to support:
 
 Functional Testing
 Regression Testing
 Cross-browser Testing
 Data-driven Testing
-🚀 Tech Stack
-Language: Java
-Automation Tool: Playwright
-Build Tool: Maven
-Test Framework: TestNG
-Reporting: Allure Report
+2. Tech Stack
+        Language: Java
+        Automation Tool: Playwright
+        Build Tool: Maven
+        Test Framework: TestNG
+        Reporting: Allure Report
 Design Pattern: Page Object Model (POM)
-📂 Project Structure
+3. Project Structure
         src
         ├── main/java
         │   ├── pages        # Page Object classes
