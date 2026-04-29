@@ -18,8 +18,8 @@ public class PageManager {
         browserThreadLocal.set(browser);
     }
 
-    public static void closeBrowser(){
-        if(browserThreadLocal.get()!=null){
+    public static void closeBrowser() {
+        if (browserThreadLocal.get() != null) {
             browserThreadLocal.get().close();
             browserThreadLocal.remove();
         }
@@ -41,8 +41,8 @@ public class PageManager {
         pagesThreadLocal.set(ctx.newPage());
     }
 
-    public static void closeBrowserContext(){
-        if(browserContextThreadLocal.get()!=null){
+    public static void closeBrowserContext() {
+        if (browserContextThreadLocal.get() != null) {
             browserContextThreadLocal.get().close();
             browserContextThreadLocal.remove();
         }
@@ -58,8 +58,8 @@ public class PageManager {
         playwrightThreadLocal.set(playwright);
     }
 
-    public static void closePlaywright(){
-        if(playwrightThreadLocal.get()!=null){
+    public static void closePlaywright() {
+        if (playwrightThreadLocal.get() != null) {
             playwrightThreadLocal.get().close();
             playwrightThreadLocal.remove();
         }
@@ -75,14 +75,14 @@ public class PageManager {
         pagesThreadLocal.set(page);
     }
 
-    public static  void closePage(){
-        if(pagesThreadLocal.get()!=null){
+    public static void closePage() {
+        if (pagesThreadLocal.get() != null) {
             pagesThreadLocal.get().close();
             pagesThreadLocal.remove();
         }
     }
 
-    public static void closeAll(){
+    public static void closeAll() {
         closeBrowserContext();
         closeBrowser();
         closePlaywright();

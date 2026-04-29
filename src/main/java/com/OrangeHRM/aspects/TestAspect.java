@@ -5,6 +5,7 @@ import org.aspectj.lang.annotation.*;
 import java.lang.reflect.Method;
 import com.OrangeHRM.annotations.TestCaseId;
 import com.OrangeHRM.utils.ScreenshotUtils;
+
 @Aspect
 public class TestAspect {
 
@@ -12,8 +13,7 @@ public class TestAspect {
     public void beforeTest(JoinPoint joinPoint) {
 
         try {
-            Method method = ((org.aspectj.lang.reflect.MethodSignature)
-                    joinPoint.getSignature()).getMethod();
+            Method method = ((org.aspectj.lang.reflect.MethodSignature) joinPoint.getSignature()).getMethod();
 
             TestCaseId annotation = method.getAnnotation(TestCaseId.class);
 

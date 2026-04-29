@@ -16,7 +16,8 @@ public class AllureStepLifecycle implements StepLifecycleListener {
     @Override
     public void afterStepStop(StepResult result) {
 
-        if (result.getName() == null) return;
+        if (result.getName() == null)
+            return;
 
         String stepName = result.getName();
         String className = null;
@@ -46,7 +47,7 @@ public class AllureStepLifecycle implements StepLifecycleListener {
 
         String status = result.getStatus() == Status.PASSED ? "PASS"
                 : result.getStatus() == Status.FAILED ? "FAIL"
-                : "BROKEN";
+                        : "BROKEN";
 
         result.setName(time + " | " + status + " | " + stepName);
     }

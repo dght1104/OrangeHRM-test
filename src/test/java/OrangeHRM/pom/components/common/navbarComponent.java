@@ -39,5 +39,9 @@ public class navbarComponent extends homePage {
     public void verifyAdminPage() {
         isOnPage("admin/viewSystemUsers");
     }
+
+    public void navigateToRecruitment() {
+        clickOnBtn(RecruitmentBtn);
+    }
     
 }

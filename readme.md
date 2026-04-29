@@ -1,67 +1,70 @@
-First: 
-mvn clean install -DskipTests            
-mvn exec:java "-Dexec.mainClass=com.microsoft.playwright.CLI" "-Dexec.args=install"
-mvn test "-DsuiteXmlFile=stestng.xml"
+🧪 Playwright Automation Testing Framework
+📌 Overview
 
+This project is an automation testing framework built using Playwright with Java, following the Page Object Model (POM) design pattern for scalability and maintainability.
 
-1. LOGIN MODULE
-✅ Positive
-Login với username + password đúng
-Login bằng Enter key
-Login sau khi logout
-❌ Negative
-Sai username
-Sai password
-Sai cả 2
-Username đúng + password rỗng
-Password đúng + username rỗng
-Cả 2 rỗng
-⚠️ Validation
-Hiển thị message lỗi đúng
-Password bị mask
-Không cho submit khi thiếu field
-👤 2. ADMIN – EMPLOYEE MANAGEMENT
-➕ Add Employee
-Thêm employee với data hợp lệ
-Thêm employee không nhập required field
-Thêm trùng username
-Upload avatar
-🔍 Search Employee
-Search theo name
-Search không tồn tại
-Search partial name
-✏️ Edit Employee
-Update info thành công
-Nhập data invalid
-Cancel edit
-❌ Delete Employee
-Delete 1 employee
-Delete nhiều employee
-Cancel delete
-🧑‍💼 3. USER MANAGEMENT (Admin)
-Tạo user mới
-Tạo user trùng username
-Edit role user
-Disable user
-Delete user
-📅 4. LEAVE MODULE
-➕ Apply Leave
-Apply leave hợp lệ
-Apply leave ngày quá khứ
-Apply leave không đủ balance
-🔄 Approve/Reject
-Approve leave
-Reject leave
-Cancel leave
-🔍 Filter
-Filter theo date
-Filter theo status
-⏰ 5. TIME MODULE
-Add timesheet
-Edit timesheet
-Submit timesheet
-Validate time nhập sai
-📊 6. DASHBOARD
-Load dashboard thành công
-Widget hiển thị đúng
-Click widget chuyển đúng page
+It is designed to support:
+
+Functional Testing
+Regression Testing
+Cross-browser Testing
+Data-driven Testing
+🚀 Tech Stack
+Language: Java
+Automation Tool: Playwright
+Build Tool: Maven
+Test Framework: TestNG
+Reporting: Allure Report
+Design Pattern: Page Object Model (POM)
+📂 Project Structure
+        src
+        ├── main/java
+        │   ├── pages        # Page Object classes
+        │   ├── locators     # UI locators
+        │   └── utils        # Utilities
+        │
+        ├── test/java
+        │   ├── tests        # Test cases
+        │   ├── steps        # Business logic layer
+        │   └── base         # Base setup
+        │
+        └── resources
+            ├── config       # Configuration files
+            └── testdata     # Test data
+⚙️ Setup & Installation
+1. Clone project
+git clone <your-repo-link>
+cd <project-folder>
+2. Build project
+mvn clean install -DskipTests
+3. Install Playwright browsers
+mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
+▶️ Run Tests
+Run all tests
+mvn test
+Run specific TestNG suite
+mvn test -DsuiteXmlFile=stestng.xml
+⚡ Quick Run (Full flow)
+mvn clean install -DskipTests && \
+mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install" && \
+mvn test -DsuiteXmlFile=stestng.xml
+📊 Generate Allure Report
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+🧩 Key Features
+Page Object Model (POM) architecture
+Reusable and maintainable structure
+Data-driven testing support
+Cross-browser execution
+🛠 Example Test Flow
+loginStep.loginToTheApplication("Admin", "admin123");
+employeeStep.navigateToEmployeePage();
+employeeStep.addEmployee(firstName, middleName, lastName, empId);
+⚠️ Notes
+Ensure stestng.xml exists (or rename to testng.xml)
+Run browser installation before executing tests
+If gặp lỗi:
+mvn clean
+Author
+
+Tran Dong Gia Han

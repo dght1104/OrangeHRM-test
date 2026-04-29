@@ -26,7 +26,8 @@ public class AllureLogger {
     // #### The below methods for log info in both report and console
 
     public AllureLogger infoStep(String message) {
-        Allure.step(message, () -> Allure.getLifecycle().updateStep(testResult -> testResult.setDescription(DEFAULT_LOG_LEVEL)));
+        Allure.step(message,
+                () -> Allure.getLifecycle().updateStep(testResult -> testResult.setDescription(DEFAULT_LOG_LEVEL)));
 
         logger.info(message);
         return this;
@@ -51,7 +52,8 @@ public class AllureLogger {
         throw new AssertionError();
     }
 
-    // #### The below methods for log with parameters, can use for both report and console
+    // #### The below methods for log with parameters, can use for both report and
+    // console
 
     public AllureLogger parameter(String message, Object param) {
         if (Objects.nonNull(stepContext)) {

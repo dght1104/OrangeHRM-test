@@ -31,15 +31,16 @@ public class AssertUtils {
                         message +
                                 " | Mismatch at index " + i +
                                 " | UI: " + uiValue +
-                                " | DB: " + dbValue
-                );
+                                " | DB: " + dbValue);
             }
         }
     }
 
     public static void assertEquals(Object expected, Object actual, String message) {
-        if (expected == null && actual == null) return;
-        if (expected != null && expected.equals(actual)) return;
+        if (expected == null && actual == null)
+            return;
+        if (expected != null && expected.equals(actual))
+            return;
 
         Assert.fail(message + " | Expected: " + expected + " but found: " + actual);
     }

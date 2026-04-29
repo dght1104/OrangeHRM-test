@@ -21,6 +21,9 @@ public class BasePage {
         this.page = page;
         this.browserContext = browser;
     }
+    public Page getPage() {
+        return page;
+    }
 
     public String getCurrentUrl() {
         return page.url();
