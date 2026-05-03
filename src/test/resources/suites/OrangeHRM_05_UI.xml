@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="UI">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="OrangeHRM.listeners.AllureListener" />
+    </listeners>
+    <test name="Verify The Menu Item Is Correctly">
+        <classes>
+            <class name="OrangeHRM.testcases.ui.verifyMenuItemTextIsCorrect"/>
+        </classes>
+    </test>
+</suite>
